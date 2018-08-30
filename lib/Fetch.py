@@ -6,7 +6,9 @@ try:
     from lib.Parser import SintakParser
     from lib.utils.helper import log
     from colorama import init, Fore, Back, Style
+    from lib.utils.helper import banner
     init()
+    banner()
 except ModuleNotFoundError:
     print("Error")
 
@@ -55,11 +57,15 @@ class Fetch():
         resp = session.post(Endpoint.SINTAKID_VALIDATE, data=LOGINDATA, headers=Req_Header.HEADERS)
         if resp.text != 'Username atau Password yang anda masukkan salah.':
             self.resp = resp.content
-            
+            print("{}[INFO] {} success login !{}".format(Fore.LIGHTGREEN_EX, username,Style.RESET_ALL))
         else:
-            print("{}[CRITICAL] Failed to login with username:{}, password:{}{}".format(Fore.RED, username, password, Style.RESET_ALL))
+            print("{}{}[CRITICAL] {} Failed to login !{}".format(Back.RED,Fore.WHITE, username,Style.RESET_ALL))
         
     def IsDashboardAccessible(self):
+        """
+        Cek apakah bagian dashboard dapat diakses
+            :param self: 
+        """
         if self.resp == None:
             return False
         return True
@@ -71,7 +77,11 @@ class Fetch():
         return self.session
 
     @checkLogin
-    def getDataBarChart(self):
+    def getESertifikat(self):
+        return SintakParser(self.session, Endpoint.SINTAK_URL_ESERTIFIKAT).getSertif()
+
+    @checkLogin
+    def getAllIndeksPrestasi(self):
         return self.session.get(Endpoint.SINTAKID_URL_DATA_BAR_CHART, headers=Req_Header.HEADERS).json()
     
     @checkLogin
@@ -91,7 +101,7 @@ class Fetch():
         if not self.IsDashboardAccessible():
             print("You Must login first!")
         else:
-            ktm = SintakParser(self.session).parsingKtm()
+            ktm = SintakParser(self.session, Endpoint.SINTAKID_USER_DASHBOARD).parsingKtm()
             img_data = requests.get(Endpoint.SINTAKID+ktm).content
 
             currentDirectory = os.getcwd()

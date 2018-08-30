@@ -1,7 +1,8 @@
 from datetime import datetime
 import pandas as pd
 import MySQLdb
-
+from colorama import init, Fore, Back, Style
+from lib.utils.core.settings import *
 def log(a):
     """
     Print out variable to screen
@@ -13,6 +14,22 @@ def readCsv(fileName, kolom):
     df = pd.read_csv(fileName, usecols=kolom)
     return df
 
+def banner():
+    print("""{}
+
+███████╗██╗███╗   ██╗████████╗ █████╗ ██╗  ██╗    ██████╗  █████╗ ██████╗ ███████╗███████╗██████╗ 
+██╔════╝██║████╗  ██║╚══██╔══╝██╔══██╗██║ ██╔╝    ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝██╔══██╗
+███████╗██║██╔██╗ ██║   ██║   ███████║█████╔╝     ██████╔╝███████║██████╔╝███████╗█████╗  ██████╔╝
+╚════██║██║██║╚██╗██║   ██║   ██╔══██║██╔═██╗     ██╔═══╝ ██╔══██║██╔══██╗╚════██║██╔══╝  ██╔══██╗
+███████║██║██║ ╚████║   ██║   ██║  ██║██║  ██╗    ██║     ██║  ██║██║  ██║███████║███████╗██║  ██║
+╚══════╝╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝ [v{}]
+{}                                                                                                
+[Author]:{}
+[Description]:{}
+[Download]:{}
+[License]:{}
+""".format(Fore.BLUE, VERSION,Style.RESET_ALL,AUTHOR,DESCRIPTION,PROJECT_HOMEPAGE,LICENSE))
+    
 def GenerateNim(angkatan):
     """Generate Nim berdasarkan fakultas."""
     db = MySQLdb.connect(host="localhost",
