@@ -50,7 +50,7 @@ class Fetch():
         LOGINDATA = {
             "user": username,
             "pass": password
-        }        
+        }    
 
         session = requests.Session()
         self.session = session

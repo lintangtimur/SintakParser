@@ -1,11 +1,12 @@
 import setuptools
+from lib.utils.core import settings
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="sintak unika parser",
-    version="1.0.0",
+    version=settings.VERSION,
     author="lintangtimur",
     author_email="lintangtimur915@gmail.com",
     description="Packages for parser and scrap information from sintak unika",
