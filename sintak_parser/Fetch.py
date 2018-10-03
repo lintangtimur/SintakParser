@@ -2,11 +2,11 @@
 try:
     import os
     import requests
-    from lib.Endpoint import Endpoint, Req_Header
-    from lib.Parser import SintakParser
-    from lib.utils.helper import log
+    from sintak_parser.Endpoint import Endpoint, Req_Header
+    from sintak_parser.Parser import SintakParser
+    from sintak_parser.utils.helper import log
     from colorama import init, Fore, Back, Style
-    from lib.utils.helper import banner
+    from sintak_parser.utils.helper import banner
     init()
     banner()
 except ModuleNotFoundError:

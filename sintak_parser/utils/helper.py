@@ -2,7 +2,7 @@ from datetime import datetime
 import pandas as pd
 import MySQLdb
 from colorama import init, Fore, Back, Style
-from lib.utils.core.settings import *
+from sintak_parser.utils.core.settings import *
 def log(a):
     """
     Print out variable to screen

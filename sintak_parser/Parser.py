@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from lib.Endpoint import Endpoint, Req_Header
+from sintak_parser.Endpoint import Endpoint, Req_Header
 
 class SintakParser():
     """
