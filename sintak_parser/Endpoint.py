@@ -5,7 +5,7 @@ class Endpoint():
     SINTAKID_URL_DATA_BAR_CHART = 'http://sintak.unika.ac.id/id/get/data-bar-chart.php'
     SINTAKID_URL_DATA_PIE_CHART = 'http://sintak.unika.ac.id/id/get/data-pie-chart.php'
     SINTAKID_URL_TRANSKRIP = 'http://sintak.unika.ac.id/id/transkrip.php'
-    SINTAKID_URL_KHS = 'http://sintak.unika.ac.id/id/khs.php'
+    SINTAKID_URL_KHS = 'http://sintak.unika.ac.id/id/get/get_khs.php'
     SINTAK_URL_TAGIHAN = 'http://sintak.unika.ac.id/tagihan/'
     SINTAK_URL_AKADEMIK = 'http://sintak.unika.ac.id/akademik/'
     SINTAK_URL_ESERTIFIKAT = 'http://sintak.unika.ac.id/esertifikat/'
