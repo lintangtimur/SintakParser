@@ -1,5 +1,9 @@
-## SINTAK PARSER
-HOST: sintak.unika.ac.id/id/
+<h2 align="center">SINTAK PARSER</h2>
+<p align="center">
+  <a href="https://github.com/lintangtimur/SintakParser/releases"><img src="https://img.shields.io/github/release/lintangtimur/SintakParser.svg?style=popout-square"></a>
+  <a href="https://github.com/lintangtimur/SintakParser/releases"><img src="https://img.shields.io/github/downloads/lintangtimur/SintakParser/total.svg?style=popout-square"></a>
+  </p>
+
 
 ## USAGE
 ```python
